@@ -3,14 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to get EDD disability benefits (SDI)</title>
-<meta property="og:title" content="How to get EDD disability benefits (SDI)" />
-<meta property="og:description" content="A step-by-step guide to applying for California EDD State Disability Insurance (SDI) benefits." />
+<title>California SDI Guide — Launching mid-May</title>
+<meta name="description" content="The complete guide to filing your California SDI claim. Launching mid-May." />
+<meta property="og:title" content="California SDI Guide — Launching mid-May" />
+<meta property="og:description" content="The complete guide to filing your California SDI claim. Launching mid-May." />
 <meta property="og:image" content="https://okprettygood.github.io/edd-sdi-guide/og-image.png" />
 <meta property="og:url" content="https://okprettygood.github.io/edd-sdi-guide/" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="How to get EDD disability benefits (SDI)" />
+<meta name="twitter:title" content="California SDI Guide — Launching mid-May" />
+<meta name="twitter:description" content="The complete guide to filing your California SDI claim. Launching mid-May." />
 <meta name="twitter:image" content="https://okprettygood.github.io/edd-sdi-guide/og-image.png" />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -20,13 +22,6 @@
     --blue: #1a56db;
     --blue-light: #ebf2ff;
     --blue-mid: #3b82f6;
-    --green: #057a55;
-    --green-light: #e3faee;
-    --amber: #b45309;
-    --amber-light: #fffbeb;
-    --red: #c81e1e;
-    --red-light: #fdf2f2;
-    --gray-50: #f9fafb;
     --gray-100: #f3f4f6;
     --gray-200: #e5e7eb;
     --gray-400: #9ca3af;
@@ -37,704 +32,152 @@
     --radius-sm: 6px;
   }
 
-  html { scroll-behavior: smooth; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
   body {
     font-family: 'DM Sans', sans-serif;
     background: #f8f9fc;
     color: var(--gray-900);
     min-height: 100vh;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 17px;
+    line-height: 1.65;
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Header */
-  .site-header {
-    background: var(--blue);
-    padding: 20px 24px;
+  main {
+    flex: 1;
     display: flex;
     align-items: center;
-    gap: 12px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .site-header .logo {
-    font-size: 13px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.9);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-  .site-header .divider { width: 1px; height: 18px; background: rgba(255,255,255,0.3); }
-  .site-header .title { font-size: 14px; color: rgba(255,255,255,0.8); font-weight: 400; }
-
-  /* Layout */
-  .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
-
-  /* Hero */
-  .hero {
-    background: var(--blue);
-    padding: 40px 24px 52px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -1px; left: 0; right: 0;
-    height: 32px;
-    background: #f8f9fc;
-    clip-path: ellipse(55% 100% at 50% 100%);
-  }
-  .hero h1 {
-    font-size: clamp(22px, 5vw, 30px);
-    font-weight: 600;
-    color: #fff;
-    line-height: 1.2;
-    margin-bottom: 10px;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero p {
-    font-size: 15px;
-    color: rgba(255,255,255,0.75);
-    max-width: 420px;
-    margin: 0 auto;
-  }
-  .hero-badges {
-    display: flex;
-    gap: 8px;
     justify-content: center;
-    margin-top: 16px;
-    flex-wrap: wrap;
+    padding: 64px 24px;
   }
-  .hero-badge {
+
+  .card {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .eyebrow {
+    font-family: 'DM Mono', monospace;
     font-size: 12px;
     font-weight: 500;
-    background: rgba(255,255,255,0.15);
-    color: rgba(255,255,255,0.9);
-    padding: 4px 12px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.2);
-  }
-
-  /* Progress nav */
-  .progress-nav {
-    background: #fff;
-    border-bottom: 1px solid var(--gray-200);
-    padding: 16px 20px;
-    position: sticky;
-    top: 57px;
-    z-index: 90;
-  }
-  .progress-track {
-    display: flex;
-    gap: 3px;
-    margin-bottom: 10px;
-  }
-  .progress-seg {
-    flex: 1;
-    height: 3px;
-    border-radius: 2px;
-    background: var(--gray-200);
-    transition: background 0.3s;
-    cursor: pointer;
-  }
-  .progress-seg.done { background: var(--green); }
-  .progress-seg.active { background: var(--blue); }
-  .progress-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .phase-badge {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 20px;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-  }
-  .step-count { font-size: 12px; color: var(--gray-400); }
-
-  /* Main content */
-  .main { padding: 28px 20px 100px; max-width: 680px; margin: 0 auto; }
-
-  .step-panel { display: none; animation: fadeUp 0.2s ease; }
-  .step-panel.active { display: block; }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
+    color: var(--blue);
+    margin-bottom: 20px;
   }
 
-  .step-title {
-    font-size: clamp(20px, 4vw, 26px);
+  h1 {
+    font-size: clamp(28px, 6vw, 40px);
     font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
     color: var(--gray-900);
-    line-height: 1.2;
-    margin-bottom: 8px;
-  }
-  .step-subtitle {
-    font-size: 15px;
-    color: var(--gray-600);
     margin-bottom: 24px;
-    line-height: 1.55;
   }
 
-  /* Cards */
-  .card {
+  .story {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--gray-600);
+    margin-bottom: 36px;
+  }
+
+  .signup {
     background: #fff;
     border: 1px solid var(--gray-200);
     border-radius: var(--radius);
-    padding: 16px 18px;
-    margin-bottom: 10px;
+    padding: 24px;
   }
-  .card-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--gray-900);
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .card-body {
-    font-size: 14px;
-    color: var(--gray-600);
-    line-height: 1.65;
-  }
-  .card-body br { display: block; margin-bottom: 2px; content: ''; }
+  .signup :is(form, iframe, .formkit-form) { max-width: 100%; }
+  .signup img { max-width: 100%; height: auto; }
 
-  /* Alert boxes */
-  .alert {
-    border-radius: var(--radius-sm);
-    padding: 12px 14px;
+  .signup-label {
     font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-    border-left: 3px solid;
-  }
-  .alert strong { font-weight: 600; display: block; margin-bottom: 2px; }
-  .alert-blue { background: var(--blue-light); border-color: var(--blue-mid); color: #1e40af; }
-  .alert-green { background: var(--green-light); border-color: var(--green); color: #065f46; }
-  .alert-amber { background: var(--amber-light); border-color: #f59e0b; color: var(--amber); }
-  .alert-red { background: var(--red-light); border-color: #f87171; color: var(--red); }
-
-  /* Example blocks */
-  .ex {
-    background: var(--gray-50);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius-sm);
-    padding: 10px 12px;
-    margin-top: 10px;
-    font-size: 13px;
-    color: var(--gray-600);
-    line-height: 1.65;
-  }
-  .ex-label {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 3px;
+    font-weight: 500;
+    color: var(--gray-800);
+    margin-bottom: 14px;
     display: block;
   }
-  .ex-label.bad { color: var(--red); }
-  .ex-label.good { color: var(--green); }
 
-  /* Tags */
-  .tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 20px;
-    vertical-align: middle;
+  .fallback-form {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
   }
-  .tag-red { background: var(--red-light); color: var(--red); }
-  .tag-blue { background: var(--blue-light); color: var(--blue); }
-  .tag-green { background: var(--green-light); color: var(--green); }
-  .tag-amber { background: var(--amber-light); color: var(--amber); }
 
-  /* Field table */
-  .field-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  .field-table tr { border-bottom: 1px solid var(--gray-100); }
-  .field-table tr:last-child { border-bottom: none; }
-  .field-table td { padding: 9px 0; vertical-align: top; line-height: 1.5; }
-  .field-table td:first-child { color: var(--gray-600); padding-right: 12px; width: 60%; }
-  .field-table td:last-child { font-weight: 500; }
-  .ans-no { color: var(--green); }
-  .ans-date { color: var(--blue); font-weight: 400; font-size: 12px; }
-  .ans-warn { color: var(--red); }
-
-  /* Denial rows */
-  .denial-row {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--gray-100);
-  }
-  .denial-row:last-child { border-bottom: none; padding-bottom: 0; }
-  .denial-dot {
-    width: 20px; height: 20px;
-    border-radius: 50%;
-    background: var(--red-light);
-    border: 1.5px solid #fca5a5;
-    flex-shrink: 0;
-    margin-top: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--red);
-  }
-  .denial-label { font-size: 14px; font-weight: 600; color: var(--gray-900); margin-bottom: 3px; }
-  .denial-detail { font-size: 13px; color: var(--gray-600); line-height: 1.55; }
-
-  /* Summary overview */
-  .phase-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: var(--gray-400);
-    margin: 20px 0 8px;
-  }
-  .ov-row {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    padding: 11px 0;
-    border-bottom: 1px solid var(--gray-100);
-    cursor: pointer;
-    text-decoration: none;
-  }
-  .ov-row:last-child { border-bottom: none; }
-  .ov-row:hover .ov-title { color: var(--blue); }
-  .ov-num {
-    width: 28px; height: 28px;
-    border-radius: 50%;
-    font-size: 12px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .ov-title { font-size: 14px; font-weight: 500; color: var(--gray-900); margin-bottom: 1px; }
-  .ov-sub { font-size: 12px; color: var(--gray-400); }
-  .footer-info {
-    background: var(--gray-100);
-    border-radius: var(--radius);
-    padding: 14px 16px;
-    font-size: 13px;
-    color: var(--gray-600);
-    line-height: 1.8;
-    margin-top: 16px;
-  }
-  .footer-info strong { color: var(--gray-900); font-weight: 600; display: block; margin-bottom: 4px; }
-
-  /* Bottom nav */
-  .bottom-nav {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    background: #fff;
-    border-top: 1px solid var(--gray-200);
-    padding: 12px 20px;
-    display: flex;
-    gap: 10px;
-    max-width: 680px;
-    margin: 0 auto;
-  }
-  /* center fixed nav */
-  .bottom-nav-outer {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    background: #fff;
-    border-top: 1px solid var(--gray-200);
-    padding: 12px 20px;
-    z-index: 200;
-  }
-  .bottom-nav-inner {
-    max-width: 680px;
-    margin: 0 auto;
-    display: flex;
-    gap: 10px;
-  }
-  .btn {
+  .fallback-form input[type="email"] {
     flex: 1;
-    padding: 12px;
-    font-family: 'DM Sans', sans-serif;
+    min-width: 0;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 12px 14px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    background: #fff;
+    color: var(--gray-900);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .fallback-form input[type="email"]:focus {
+    border-color: var(--blue-mid);
+    box-shadow: 0 0 0 3px var(--blue-light);
+  }
+  .fallback-form button {
+    font-family: inherit;
     font-size: 15px;
     font-weight: 500;
-    border-radius: var(--radius);
-    cursor: pointer;
-    border: 1.5px solid var(--gray-200);
-    background: #fff;
-    color: var(--gray-800);
-    transition: background 0.15s, border-color 0.15s;
-  }
-  .btn:hover:not(:disabled) { background: var(--gray-100); }
-  .btn:disabled { opacity: 0.3; cursor: default; }
-  .btn-primary {
+    padding: 12px 18px;
     background: var(--blue);
     color: #fff;
-    border-color: var(--blue);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background 0.15s;
   }
-  .btn-primary:hover:not(:disabled) { background: #1648c7; border-color: #1648c7; }
+  .fallback-form button:hover { background: #1542b0; }
+  .fallback-form button:disabled { opacity: 0.6; cursor: not-allowed; }
 
-  /* Timeline */
-  .timeline { display: flex; flex-direction: column; }
-  .tl-item { display: flex; gap: 12px; }
-  .tl-left { display: flex; flex-direction: column; align-items: center; width: 28px; flex-shrink: 0; }
-  .tl-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
-  .tl-line { flex: 1; width: 1.5px; background: var(--gray-200); margin: 4px 0; min-height: 16px; }
-  .tl-content { flex: 1; padding-bottom: 16px; }
-  .tl-date { font-size: 11px; font-weight: 600; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 2px; }
-  .tl-label { font-size: 14px; font-weight: 500; color: var(--gray-900); }
-  .tl-note { font-size: 12px; color: var(--gray-400); line-height: 1.5; margin-top: 2px; }
+  .hint {
+    font-size: 13px;
+    color: var(--gray-400);
+    margin-top: 12px;
+  }
 
-  a { color: var(--blue); }
+  footer {
+    padding: 24px;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--gray-400);
+    letter-spacing: 0.04em;
+  }
 
-  @media (max-width: 400px) {
-    .hero h1 { font-size: 20px; }
-    .step-title { font-size: 18px; }
+  @media (max-width: 480px) {
+    main { padding: 40px 20px; }
+    .fallback-form { flex-direction: column; }
+    .fallback-form button { width: 100%; }
   }
 </style>
 </head>
 <body>
+<main>
+  <div class="card">
+    <div class="eyebrow">California SDI Guide</div>
+    <h1>The full guide is launching mid-May.</h1>
+    <p class="story">
+      I built this to help a friend access money they were entitled to after they got laid off during a tough time for their mental health. I've navigated EDD and IRS systems both personally and through close family who worked inside those agencies for years, so I put together something that could actually help. I've since turned it into a complete step-by-step resource: every form, every deadline, every mistake that trips people up. The full guide and toolkit launch mid-May.
+    </p>
 
-<header class="site-header">
-  <span class="logo">California EDD</span>
-  <div class="divider"></div>
-  <span class="title">SDI Disability Guide</span>
-</header>
+    <div class="signup">
+      <label class="signup-label" for="email">Get notified when it's live</label>
 
-<div class="hero">
-  <div class="container">
-    <h1>How to get EDD disability benefits (SDI)</h1>
-    <p>A plain-language step-by-step guide. For anyone in California who needs help filing.</p>
-    <div class="hero-badges">
-      <span class="hero-badge">13 steps</span>
-      <span class="hero-badge">Mental health included</span>
-      <span class="hero-badge">What gets you denied</span>
-      <span class="hero-badge">Free</span>
+      <script async data-uid="05b7fa6456" src="https://kevin-phung.kit.com/05b7fa6456/index.js"></script>
     </div>
   </div>
-</div>
+</main>
 
-<div class="progress-nav">
-  <div class="container">
-    <div class="progress-track" id="prog"></div>
-    <div class="progress-meta">
-      <span class="phase-badge" id="phase-pill"></span>
-      <span class="step-count" id="step-count"></span>
-    </div>
-  </div>
-</div>
-
-<div class="main" id="main-content">
-  <div id="steps-container"></div>
-</div>
-
-<div class="bottom-nav-outer">
-  <div class="bottom-nav-inner">
-    <button class="btn" id="btn-back" onclick="move(-1)">Back</button>
-    <button class="btn btn-primary" id="btn-next" onclick="move(1)">Next</button>
-  </div>
-</div>
-
-<script>
-const PHASES = [
-  { label: "Overview", bg: "#ebf2ff", color: "#1a56db" },
-  { label: "Before you file", bg: "#ebf2ff", color: "#1a56db" },
-  { label: "Before you file", bg: "#ebf2ff", color: "#1a56db" },
-  { label: "Before you file", bg: "#ebf2ff", color: "#1a56db" },
-  { label: "Filing", bg: "#e3faee", color: "#057a55" },
-  { label: "Filing", bg: "#e3faee", color: "#057a55" },
-  { label: "Filing", bg: "#e3faee", color: "#057a55" },
-  { label: "Special case", bg: "#fffbeb", color: "#b45309" },
-  { label: "The form answers", bg: "#fffbeb", color: "#b45309" },
-  { label: "After filing", bg: "#fffbeb", color: "#b45309" },
-  { label: "After filing", bg: "#fffbeb", color: "#b45309" },
-  { label: "After filing", bg: "#fffbeb", color: "#b45309" },
-  { label: "What gets you denied", bg: "#fdf2f2", color: "#c81e1e" },
-  { label: "Summary", bg: "#e3faee", color: "#057a55" },
-];
-
-const STEPS = [
-  {
-    title: "What is EDD disability (SDI)?",
-    subtitle: "Before we start — let's understand what this is.",
-    content: `
-      <div class="card"><div class="card-title">SDI = State Disability Insurance</div><div class="card-body">It is money the California government pays you when you are too sick or injured to work.<br><br>You already paid into it — it was taken from your paycheck automatically. Look for <strong>"CASDI"</strong> on an old pay stub.</div></div>
-      <div class="card"><div class="card-title">How much do you get?</div><div class="card-body">About <strong>70–90% of what you used to earn</strong>, up to $1,765 per week. You can receive it for up to 52 weeks.</div></div>
-      <div class="card"><div class="card-title">Who is this for?</div><div class="card-body">Anyone who:<br><br>— Cannot work because of illness, injury, or mental health<br>— Paid into CASDI through a California job<br>— Was working, or actively looking for work, when they got sick</div></div>
-      <div class="alert alert-blue"><strong>Not currently working?</strong> That is okay. As long as you had a California job in the last 18 months that took CASDI from your paycheck, you may still qualify.</div>`
-  },
-  {
-    title: "Step 1 — Check if you qualify",
-    subtitle: "You need 3 things to qualify. Read each one carefully.",
-    content: `
-      <div class="card"><div class="card-title">1. You paid into CASDI</div><div class="card-body">Look at an old California pay stub. Find <strong>"CASDI"</strong> or <strong>"SDI"</strong> in the deductions. If you see it, you paid in.<br><br>You need at least <strong>$300</strong> in CASDI wages in the last 18 months.</div></div>
-      <div class="card"><div class="card-title">2. You cannot do your normal work</div><div class="card-body">Your disability must stop you from doing your regular job duties for <strong>at least 8 days in a row</strong>. A doctor must confirm this.</div></div>
-      <div class="card"><div class="card-title">3. You were working or looking for work</div><div class="card-body">When your disability started, you were either:<br><br>— Currently employed, OR<br>— Actively applying for jobs<br><br>If you had not been looking for work at all, it is harder to qualify.</div></div>
-      <div class="alert alert-amber"><strong>Self-employed or 1099?</strong> You are probably not covered unless you opted into SDI separately. BUT — if you had any W-2 job in the last 18 months, those wages may still count.</div>
-      <div class="alert alert-green"><strong>If you are unsure — file anyway.</strong> EDD will tell you if you don't qualify. The worst they can say is no.</div>`
-  },
-  {
-    title: "Step 2 — Know your disability start date",
-    subtitle: "This date is very important. Once you file, you cannot change it.",
-    content: `
-      <div class="card"><div class="card-title">What is the disability start date?</div><div class="card-body">The first day your condition stopped you from doing your normal job.<br><br>Not the day you went to the doctor. Not the day you decided to file. <strong>The first day you could not work.</strong></div></div>
-      <div class="ex"><span class="ex-label good">Example</span>You started feeling too depressed to work on October 3rd. You saw your doctor on October 15th.<br><br>Your disability start date is <strong>October 3rd</strong> — not October 15th.</div>
-      <div class="alert alert-amber" style="margin-top:10px"><strong>Why it matters:</strong> You only get paid starting from this date (after the 7-day waiting period). You also have 49 days from this date to file. After 49 days, you lose benefits for missed days.</div>
-      <div class="alert alert-blue"><strong>Your doctor does not need to have seen you on that exact day.</strong> They can confirm your disability started earlier based on your symptoms. This is common and accepted by EDD.</div>`
-  },
-  {
-    title: "Step 3 — Talk to your doctor first",
-    subtitle: "Your doctor has to sign off on your claim. Prepare them before you file.",
-    content: `
-      <div class="card"><div class="card-title">Who can certify your disability?</div><div class="card-body">— Medical doctor (MD or DO)<br>— Psychiatrist<br>— Psychologist<br>— Nurse practitioner (NP)<br>— Licensed therapist (LCSW or MFT)<br><br>If you see both a therapist and a psychiatrist, ask <strong>both</strong> to certify. It makes your claim stronger.</div></div>
-      <div class="card"><div class="card-title">What to tell your doctor</div><div class="card-body">Tell them specifically:<br><br>1. What your job requires you to do<br>2. Which tasks you cannot do because of your condition<br>3. Your disability start date — so their dates match yours</div></div>
-      <div class="alert alert-green"><strong>For mental health claims:</strong> Ask your doctor to describe your <em>functional limitations</em> — exactly how your condition stops you from working. Vague notes get denied.
-        <div class="ex" style="margin-top:8px"><span class="ex-label bad">Too vague — often denied:</span>"Patient has depression and anxiety."<br><br><span class="ex-label good">Specific — better chance of approval:</span>"Patient has severe depressive episodes — unable to concentrate, maintain a schedule, or interact with others for 8+ consecutive days."</div>
-      </div>
-      <div class="alert alert-amber"><strong>Ask if your doctor submits electronically.</strong> If they only do paper, bring them a printed DE 2501 form. Paper takes 1–2 extra weeks to process.</div>`
-  },
-  {
-    title: "Step 4 — Create your EDD account",
-    subtitle: "Filing online is faster and easier to track.",
-    content: `
-      <div class="card"><div class="card-title">Go to edd.ca.gov</div><div class="card-body">Click "SDI Online" → Create a myEDD account → Start a new Disability Insurance claim.<br><br><a href="https://edd.ca.gov/en/disability/SDI_Online/" target="_blank">edd.ca.gov — SDI Online portal →</a></div></div>
-      <div class="card"><div class="card-title">What to have ready before you start</div><div class="card-body">— Your Social Security Number (SSN)<br>— California driver's license or ID number<br>— Employer's name and address (last job)<br>— Your last day of work<br>— Doctor's name, phone, and license number<br>— Bank account info (for direct deposit)</div></div>
-      <div class="alert alert-blue"><strong>Don't have everything?</strong> Start anyway. The most important thing is filing before the <strong>49-day deadline</strong> from your disability start date.</div>`
-  },
-  {
-    title: "Step 5 — Fill out YOUR part (Part A)",
-    subtitle: "Go slowly. Every blank field can cause a delay or denial.",
-    content: `
-      <div class="card"><div class="card-title">Disability start date</div><div class="card-body">The first day you could not do your job. Must match what your doctor will write. Confirm with your doctor before filing.</div></div>
-      <div class="card"><div class="card-title">Describe your condition <span class="tag tag-red">Very important</span></div><div class="card-body">Don't just write the diagnosis name. Explain how it stops you from working.</div>
-        <div class="ex"><span class="ex-label bad">Too vague:</span>"Anxiety and depression"<br><br><span class="ex-label good">Better:</span>"Severe anxiety and depression. Cannot concentrate, leave home, or interact with coworkers. Unable to perform normal job duties."</div>
-      </div>
-      <div class="card"><div class="card-title">List ALL employers from the last 18 months</div><div class="card-body">Not just your most recent job. Every job that took CASDI from your check counts toward your benefit amount. Missing one means missing wages.</div></div>
-      <div class="card"><div class="card-title">Other income or pay received</div><div class="card-body">Report everything — sick pay, PTO, vacation pay. If your employer is still paying your full salary, you may not qualify yet. Report it and let EDD decide.</div></div>
-      <div class="card"><div class="card-title">Your doctor's license number</div><div class="card-body">California format: letter + numbers (example: A12345). Do <strong>NOT</strong> use their DEA number or NPI. Ask the doctor's office for the exact number.</div></div>
-      <div class="alert alert-amber"><strong>Don't leave anything blank.</strong> If it doesn't apply, write "N/A." A blank field can trigger an automatic denial.</div>`
-  },
-  {
-    title: "Step 6 — Your doctor fills out their part (Part B)",
-    subtitle: "This is where most claims get denied. Coach your doctor beforehand.",
-    content: `
-      <div class="alert alert-blue">After you submit Part A, EDD notifies your doctor to complete their section. They have 49 days from your disability start date. <strong>Follow up — don't assume they did it.</strong></div>
-      <div class="card"><div class="card-title">What your doctor must include</div><div class="card-body">— Your diagnosis and ICD-10 code (example: F32.1 for major depression)<br>— The date your disability started<br>— An estimated return-to-work date<br>— How your condition limits your ability to work<br>— Their California license number — typed clearly<br>— Their signature</div></div>
-      <div class="alert alert-green"><strong>Most important field — functional limitations:</strong> Your doctor must explain HOW your condition stops you from working.
-        <div class="ex" style="margin-top:8px"><span class="ex-label bad">Gets denied:</span>"Patient has generalized anxiety disorder."<br><br><span class="ex-label good">Gets approved:</span>"Patient has GAD causing panic attacks 3–4x per week. Unable to concentrate for sustained periods, maintain a schedule, or interact with others. Cannot perform job duties."</div>
-      </div>
-      <div class="alert alert-amber"><strong>Dates must match.</strong> Your disability start date in Part A must be the same date your doctor writes in Part B. Even one day difference can flag your claim.</div>
-      <div class="alert alert-amber"><strong>Handwriting matters.</strong> Ask your doctor to type or print clearly. EDD has denied claims just because they could not read handwriting. Electronic submission through SDI Online is safest.</div>`
-  },
-  {
-    title: "Step 7 — Haven't been working? (DE 5005)",
-    subtitle: "If you were unemployed when you got sick, EDD sends you an extra form.",
-    content: `
-      <div class="card"><div class="card-title">What is the DE 5005?</div><div class="card-body">A short form EDD sends when you weren't employed when your disability started. They need to know: were you looking for work when you got sick?</div></div>
-      <div class="card"><div class="card-title">"Have you recently been looking for work?" <span class="tag tag-red">Answer YES</span></div><div class="card-body">This is the most important question on the form. If you were genuinely applying for jobs before you got sick, answer <strong>Yes</strong>.<br><br>This is what allows unemployed people to qualify for SDI.</div></div>
-      <div class="card"><div class="card-title">List your job search contacts</div><div class="card-body">Employers you contacted in the <strong>3 months before</strong> your disability. You only need <strong>1–2 real entries</strong>. Include:<br><br>— Company name<br>— Their website or address<br>— Date you contacted them<br>— Phone number (leave blank if you don't have it)</div>
-        <div class="ex"><span class="ex-label good">Example entry</span>Company: Acme Corp · Website: acmecorp.com · Date: 09-15-2025 · Phone: (blank)</div>
-      </div>
-      <div class="alert alert-green"><strong>One real contact is enough.</strong> A real accepted claim was approved with just one job search entry. Keep your application emails or LinkedIn messages as backup in case EDD follows up.</div>
-      <div class="alert alert-amber"><strong>Don't make up contacts.</strong> EDD can verify. Only list places you actually reached out to.</div>`
-  },
-  {
-    title: "Step 8 — How to answer the form",
-    subtitle: "These are the right answers for most people. Read the notes carefully.",
-    content: `
-      <div class="card">
-        <div class="card-title">Section 3 — Employment questions</div>
-        <table class="field-table">
-          <tr><td>Are you self employed?</td><td class="ans-no">No (for most people)</td></tr>
-          <tr><td>Are you a State Government employee?</td><td class="ans-no">No (for most people)</td></tr>
-          <tr><td>Were you in custody of law enforcement?</td><td class="ans-no">No</td></tr>
-          <tr><td>Last day worked before disability</td><td class="ans-date">The actual date</td></tr>
-          <tr><td>When did your disability begin?</td><td class="ans-date">The actual date</td></tr>
-          <tr><td>Date you want DI claim to begin</td><td class="ans-date">Same as disability start</td></tr>
-          <tr><td>Have you worked any days since disability?</td><td class="ans-no">No (if you haven't)</td></tr>
-          <tr><td>Have you recovered?</td><td class="ans-no">No</td></tr>
-          <tr><td>Have you returned to work?</td><td class="ans-no">No</td></tr>
-        </table>
-      </div>
-      <div class="card">
-        <div class="card-title">Section 3 — Job questions</div>
-        <table class="field-table">
-          <tr><td>Why did you stop working?</td><td class="ans-date">Illness, Injury or Pregnancy</td></tr>
-          <tr><td>How would you describe your job?</td><td class="ans-date">Describe physical demands honestly</td></tr>
-          <tr><td>Is employer still paying you?</td><td class="ans-no">No (if they aren't)</td></tr>
-          <tr><td>May we disclose payment info to employer?</td><td class="ans-no">No (protects privacy)</td></tr>
-          <tr><td>Do you have more than 2 employers?</td><td class="ans-no">No (if you don't)</td></tr>
-          <tr><td>Have you filed for Workers' Compensation?</td><td class="ans-no">No (for most people)</td></tr>
-          <tr><td><strong>Was this disability caused by your job?</strong></td><td class="ans-warn">No ⚠️ See note</td></tr>
-          <tr><td>Are you in an alcohol/drug recovery facility?</td><td class="ans-no">No (for most people)</td></tr>
-        </table>
-      </div>
-      <div class="alert alert-red"><strong>"Was this disability caused by your job?" — answer No for almost everyone.</strong> Even if work stress made things worse, your illness or mental health condition is not the same as a work injury. Answering Yes can redirect your claim to Workers' Comp — a totally different and harder process.</div>
-      <div class="alert alert-blue"><strong>Section 4 — Employers:</strong> List your most recent employer with full address and last day worked. List ALL employers from the last 18 months. Leave phone blank if you don't have it — that's fine.</div>`
-  },
-  {
-    title: "Step 9 — Confirm your doctor submitted",
-    subtitle: "Don't assume. Follow up 3–5 days after your appointment.",
-    content: `
-      <div class="card"><div class="card-title">Call your doctor's office</div><div class="card-body">Ask: <em>"Did you submit the EDD medical certification for my disability claim?"</em><br><br>If they haven't, remind them. They have <strong>49 days</strong> from your disability start date to submit it.</div></div>
-      <div class="card"><div class="card-title">Check SDI Online</div><div class="card-body">Log in at edd.ca.gov. You will see when EDD receives your doctor's certification. If it doesn't show up within 2 weeks of your appointment, follow up again.</div></div>
-      <div class="alert alert-amber"><strong>Paper forms take longer.</strong> If your doctor uses paper, they mail it directly to EDD. Ask them to confirm they sent it and get the date they mailed it. Paper adds about 1–2 weeks.</div>`
-  },
-  {
-    title: "Step 10 — Wait for your first payment",
-    subtitle: "Normal processing takes 2–3 weeks after EDD receives both parts.",
-    content: `
-      <div class="card"><div class="card-title">The 7-day waiting period</div><div class="card-body">The first 7 days of every claim are <strong>unpaid</strong>. This is automatic for everyone. Your first payment covers day 8 onward.</div></div>
-      <div class="card"><div class="card-title">How you get paid</div><div class="card-body">— <strong>Direct deposit</strong> to your bank account (fastest)<br>— EDD debit card mailed to you<br><br>Set up direct deposit when you file for the fastest payments.</div></div>
-      <div class="card"><div class="card-title">Still waiting after 3 weeks?</div><div class="card-body">Call EDD at <strong>1-800-480-3287</strong>.<br><br>Call at <strong>8:01 AM</strong> — lines are less busy right after they open. Ask them to check the status of both Part A and Part B.</div></div>
-      <div class="alert alert-blue"><strong>Benefit amount:</strong> 70–90% of wages from your highest-earning quarter in the last 18 months — not necessarily what you were earning right before you stopped working.</div>`
-  },
-  {
-    title: "Step 11 — Submit a form every 2 weeks",
-    subtitle: "You must confirm your disability every two weeks or payments stop.",
-    content: `
-      <div class="card"><div class="card-title">The continued claim form (DE 2500A)</div><div class="card-body">Every 2 weeks, EDD sends you this form. You confirm you are still disabled and have not returned to work.<br><br>Do it through <strong>SDI Online</strong> — takes about 5 minutes.</div></div>
-      <div class="alert alert-amber"><strong>Don't miss this.</strong> If you don't return the form on time, your payments pause.</div>
-      <div class="card"><div class="card-title">Did you work any hours? Report them.</div><div class="card-body">If you worked any hours, earned any money, or received sick pay during a claim period — <strong>report it</strong>.<br><br>Hiding income is fraud and you will have to pay it back with penalties.</div></div>`
-  },
-  {
-    title: "What will get you denied",
-    subtitle: "These are the most common reasons EDD rejects claims. Avoid every one.",
-    content: `
-      <div class="alert alert-red"><strong>A denial is not always permanent</strong> — most are fixable. But knowing these upfront means you won't have to deal with them at all.</div>
-
-      <div class="card">
-        <div class="card-title">Your answers on the form</div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">Left fields blank</div><div class="denial-detail">Any blank field — even an optional-looking one — can trigger an automatic denial. Write "N/A" if it doesn't apply to you.</div></div></div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">Described condition too vaguely</div><div class="denial-detail">"I have anxiety" is not enough. You must explain how it stops you from doing your specific job. No functional limitation = no approval.</div></div></div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">Said "Yes" to job caused disability</div><div class="denial-detail">Answering Yes to "Was this disability caused by your job?" routes your claim toward Workers' Comp. For illness and mental health, answer No.</div></div></div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">Filed after 49 days</div><div class="denial-detail">You lose all benefits for days before you filed. File as early as possible — even if your doctor hasn't submitted their part yet.</div></div></div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">No wage loss</div><div class="denial-detail">If your employer is still paying your full salary through sick leave or PTO, EDD says there's nothing to replace. Wait until those run out, then file.</div></div></div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Your doctor's section (Part B)</div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">Left the return-to-work date blank</div><div class="denial-detail">The #1 reason for denial on the medical form. Your doctor must put an estimated return date — even if it's just a guess. It can always be extended later.</div></div></div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">Diagnosis only, no functional limitations</div><div class="denial-detail">Writing "patient has PTSD" is not enough. Your doctor must explain what tasks you cannot perform and why. Most common reason mental health claims get denied.</div></div></div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">Disability start dates don't match</div><div class="denial-detail">Your date in Part A and your doctor's date in Part B must be exactly the same. Even one day difference flags the claim.</div></div></div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">Wrong license number</div><div class="denial-detail">EDD needs your doctor's California medical license (format: letter + digits, like A12345). Using their NPI or DEA number instead causes an "unable to identify physician" denial.</div></div></div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">Illegible handwriting</div><div class="denial-detail">EDD has denied claims because they could not read the doctor's signature or license number. Ask your doctor to print clearly or submit electronically.</div></div></div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">Doctor submitted too late</div><div class="denial-detail">Your doctor has 49 days from your disability start date to submit Part B. Follow up with them — don't assume they did it.</div></div></div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Eligibility issues</div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">No CASDI wages in the base period</div><div class="denial-detail">If you didn't have a California W-2 job in the last 18 months with CASDI deductions, you are not covered. Self-employed and 1099 workers fall here unless they opted in.</div></div></div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">Not working or seeking work</div><div class="denial-detail">If you were unemployed and not actively looking for jobs when your disability started, EDD will deny the claim. On the DE 5005 form, answer "Yes" to job seeking — and back it up with real contacts.</div></div></div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">Collecting unemployment (UI) at the same time</div><div class="denial-detail">You cannot receive SDI and unemployment benefits at the same time. If you become disabled while on UI, switch to SDI — don't collect both.</div></div></div>
-        <div class="denial-row"><div class="denial-dot">✕</div><div><div class="denial-label">Less than 8 consecutive days disabled</div><div class="denial-detail">SDI requires you to be unable to work for at least 8 days in a row. Intermittent bad days don't qualify — it has to be a continuous period.</div></div></div>
-      </div>
-
-      <div class="alert alert-green"><strong>Got denied anyway?</strong> Call <strong>1-855-481-3646</strong> to find out the exact reason. Then fix it and appeal within 30 days. Most denials get overturned when the specific issue is corrected.</div>`
-  },
-  {
-    title: "You're ready — full summary",
-    subtitle: "Tap any step to go back and review it.",
-    content: `
-      <div class="phase-label">Before you file</div>
-      <div class="card" style="padding:8px 16px">
-        <div class="ov-row" onclick="goTo(1)"><div class="ov-num" style="background:#ebf2ff;color:#1a56db;">1</div><div><div class="ov-title">Check you qualify</div><div class="ov-sub">CASDI on pay stub · $300 min · working or job seeking</div></div></div>
-        <div class="ov-row" onclick="goTo(2)"><div class="ov-num" style="background:#ebf2ff;color:#1a56db;">2</div><div><div class="ov-title">Set your disability start date</div><div class="ov-sub">First day you couldn't work — can't change this later</div></div></div>
-        <div class="ov-row" onclick="goTo(3)" style="border-bottom:none"><div class="ov-num" style="background:#ebf2ff;color:#1a56db;">3</div><div><div class="ov-title">Brief your doctor</div><div class="ov-sub">Tell them your job duties and how your condition limits you</div></div></div>
-      </div>
-      <div class="phase-label">Filing</div>
-      <div class="card" style="padding:8px 16px">
-        <div class="ov-row" onclick="goTo(4)"><div class="ov-num" style="background:#e3faee;color:#057a55;">4</div><div><div class="ov-title">Create EDD account and start claim</div><div class="ov-sub">edd.ca.gov → SDI Online</div></div></div>
-        <div class="ov-row" onclick="goTo(5)"><div class="ov-num" style="background:#e3faee;color:#057a55;">5</div><div><div class="ov-title">Fill out your part (Part A)</div><div class="ov-sub">Be specific · list all employers · no blank fields</div></div></div>
-        <div class="ov-row" onclick="goTo(6)"><div class="ov-num" style="background:#e3faee;color:#057a55;">6</div><div><div class="ov-title">Doctor fills out their part (Part B)</div><div class="ov-sub">Functional limitations · matching dates · typed clearly</div></div></div>
-        <div class="ov-row" onclick="goTo(7)"><div class="ov-num" style="background:#e3faee;color:#057a55;">7</div><div><div class="ov-title">Unemployed? Fill out the DE 5005</div><div class="ov-sub">Answer YES to job seeking · list 1–2 real contacts</div></div></div>
-        <div class="ov-row" onclick="goTo(8)" style="border-bottom:none"><div class="ov-num" style="background:#e3faee;color:#057a55;">8</div><div><div class="ov-title">Know the right form answers</div><div class="ov-sub">Most answers are No · "job caused disability" = No</div></div></div>
-      </div>
-      <div class="phase-label">After filing</div>
-      <div class="card" style="padding:8px 16px">
-        <div class="ov-row" onclick="goTo(9)"><div class="ov-num" style="background:#fffbeb;color:#b45309;">9</div><div><div class="ov-title">Confirm your doctor submitted</div><div class="ov-sub">Call their office 3–5 days later</div></div></div>
-        <div class="ov-row" onclick="goTo(10)"><div class="ov-num" style="background:#fffbeb;color:#b45309;">10</div><div><div class="ov-title">Wait for payment (2–3 weeks)</div><div class="ov-sub">7-day unpaid wait · then direct deposit or debit card</div></div></div>
-        <div class="ov-row" onclick="goTo(11)" style="border-bottom:none"><div class="ov-num" style="background:#fffbeb;color:#b45309;">11</div><div><div class="ov-title">Submit form every 2 weeks</div><div class="ov-sub">DE 2500A · don't miss it or payments stop</div></div></div>
-      </div>
-      <div class="phase-label" style="color:#c81e1e">Watch out for</div>
-      <div class="card" style="padding:8px 16px">
-        <div class="ov-row" onclick="goTo(12)" style="border-bottom:none"><div class="ov-num" style="background:#fdf2f2;color:#c81e1e;">!</div><div><div class="ov-title">What gets you denied</div><div class="ov-sub">Blank fields · vague condition · wrong dates · missing return date</div></div></div>
-      </div>
-      <div class="footer-info">
-        <strong>Important phone numbers</strong>
-        EDD SDI general line: <strong>1-800-480-3287</strong> (Mon–Fri 8am–5pm)<br>
-        SDI Medical Unit (for denials): <strong>1-855-481-3646</strong><br>
-        File deadline: <strong>49 days</strong> from disability start date<br>
-        Appeal deadline: <strong>30 days</strong> from denial notice<br>
-        Max benefit: <strong>$1,765/week</strong> · up to <strong>52 weeks</strong>
-      </div>`
-  }
-];
-
-let current = 0;
-
-function render() {
-  const container = document.getElementById('steps-container');
-  container.innerHTML = '';
-  STEPS.forEach((s, i) => {
-    const div = document.createElement('div');
-    div.className = 'step-panel' + (i === current ? ' active' : '');
-    div.innerHTML = `<h1 class="step-title">${s.title}</h1><p class="step-subtitle">${s.subtitle}</p>${s.content}`;
-    container.appendChild(div);
-  });
-
-  const prog = document.getElementById('prog');
-  prog.innerHTML = '';
-  STEPS.forEach((_, i) => {
-    const seg = document.createElement('div');
-    seg.className = 'progress-seg' + (i < current ? ' done' : i === current ? ' active' : '');
-    seg.onclick = () => goTo(i);
-    prog.appendChild(seg);
-  });
-
-  const ph = PHASES[current];
-  const pill = document.getElementById('phase-pill');
-  pill.textContent = ph.label;
-  pill.style.background = ph.bg;
-  pill.style.color = ph.color;
-
-  const isFirst = current === 0;
-  const isLast = current === STEPS.length - 1;
-  document.getElementById('step-count').textContent = (isFirst || isLast) ? '' : `Step ${current} of ${STEPS.length - 2}`;
-  document.getElementById('btn-back').disabled = isFirst;
-  document.getElementById('btn-next').textContent = isLast ? 'Start over' : current === STEPS.length - 2 ? 'See summary →' : 'Next →';
-}
-
-function move(dir) {
-  if (dir === 1 && current === STEPS.length - 1) current = 0;
-  else current = Math.max(0, Math.min(STEPS.length - 1, current + dir));
-  render();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function goTo(n) {
-  current = n;
-  render();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-render();
-</script>
+<footer>— okprettygood</footer>
 </body>
 </html>
